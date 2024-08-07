@@ -30,24 +30,16 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 import java.net.*;
+import java.util.Arrays;
+import java.util.Objects;
+import sun.misc.Unsafe;
 
 public class CTCPreloadClassLoader extends URLClassLoader {
-    // https://stackoverflow.com/a/56043252/1050369
-    private static final VarHandle MODIFIERS;
-
-    static {
-        try {
-            var lookup = MethodHandles.privateLookupIn(Field.class, MethodHandles.lookup());
-            MODIFIERS = lookup.findVarHandle(Field.class, "modifiers", int.class);
-        } catch (IllegalAccessException | NoSuchFieldException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-
     static {
         try {
             Field toolkit = Toolkit.class.getDeclaredField("toolkit");
@@ -67,14 +59,12 @@ public class CTCPreloadClassLoader extends URLClassLoader {
             defaultHeadlessField.set(null, Boolean.FALSE);
             headlessField.set(null,Boolean.FALSE);
 
-            makeNonFinal(ge);
-
             Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
             Field smf = smfCls.getDeclaredField("instance");
             smf.setAccessible(true);
             smf.set(null, null);
 
-            ge.set(null, new CTCGraphicsEnvironment());
+            setFinalStatic(ge, new CTCGraphicsEnvironment());
 
             String propertyFontManager = System.getProperty("cacio.font.fontmanager");
             if (propertyFontManager != null) {
@@ -119,10 +109,14 @@ public class CTCPreloadClassLoader extends URLClassLoader {
         super.addURL(getFileURL(new File(path)));
     }
 
-    public static void makeNonFinal(Field field) {
-        int mods = field.getModifiers();
-        if (Modifier.isFinal(mods)) {
-            MODIFIERS.set(field, mods & ~Modifier.FINAL);
-        }
+    // https://stackoverflow.com/a/71465198
+    public static void setFinalStatic(Field field, Object value) throws Exception{
+        Field unsafeField = Unsafe.class.getDeclaredField("theUnsafe");
+            unsafeField.setAccessible(true);
+        Unsafe unsafe = (Unsafe) unsafeField.get(null);
+        Object fieldBase = unsafe.staticFieldBase(field);
+        long fieldOffset = unsafe.staticFieldOffset(field);
+
+        unsafe.putObject(fieldBase, fieldOffset, value);
     }
 }
