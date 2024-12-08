@@ -13,7 +13,7 @@ jobs:
       uses: actions/setup-java@main
       with:
         java-version: 9
-        distribution: temurin
+        distribution: zulu
     - name: Build Maven and copy output
       run: bash build_and_out.sh
 
