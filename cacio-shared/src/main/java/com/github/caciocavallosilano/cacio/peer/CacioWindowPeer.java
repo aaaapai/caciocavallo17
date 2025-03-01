@@ -378,9 +378,4 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
         return ret;
     }
 
-    @Override
-    protected void peerPaint(Graphics g, boolean update) {
-        // Canvas never does any painting by itself, not even clearing the
-        // background.
-    }
 }
