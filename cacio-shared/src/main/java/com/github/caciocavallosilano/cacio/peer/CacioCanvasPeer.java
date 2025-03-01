@@ -29,6 +29,7 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.peer.CanvasPeer;
 import javax.swing.JPanel;
+import java.awt.GraphicsConfiguration;
 
 class CacioCanvasPeer extends CacioComponentPeer<Canvas, JPanel>
                       implements CanvasPeer {
@@ -43,4 +44,9 @@ class CacioCanvasPeer extends CacioComponentPeer<Canvas, JPanel>
         // background.
     }
 
+    @Override
+    protected void peerPaint(Graphics g, boolean update) {
+        // Canvas never does any painting by itself, not even clearing the
+        // background.
+    }
 }
