@@ -74,8 +74,4 @@ class CacioDialogPeer extends CacioWindowPeer implements DialogPeer {
         }
     }
 
-    @Override
-    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
-        return gc;
-    }
 }
