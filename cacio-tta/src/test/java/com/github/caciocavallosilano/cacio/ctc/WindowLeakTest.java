@@ -25,33 +25,36 @@
 
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.ctc.junit.CacioTest;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertTrue;
 
-import java.awt.*;
+import java.awt.Frame;
+import java.awt.Window;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import com.github.caciocavallosilano.cacio.ctc.junit.CacioTestRunner;
 
-@CacioTest
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(CacioTestRunner.class)
 public class WindowLeakTest {
 
     private ReferenceQueue<Window> windowQueue;
     private List<WeakReference<Window>> weakRefs;
 
-    @BeforeEach
+    @Before
     public void setUp() {
         windowQueue = new ReferenceQueue<>();
         weakRefs = new ArrayList<>();
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
         weakRefs = null;
         windowQueue = null;

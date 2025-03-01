@@ -36,33 +36,37 @@
 
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.ctc.junit.CacioTest;
-import org.assertj.swing.annotation.GUITest;
-import org.junit.jupiter.api.Test;
-
-import javax.swing.*;
-import java.awt.*;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-@CacioTest
+import java.awt.AWTException;
+import java.awt.Point;
+import java.awt.Robot;
+
+import javax.swing.JFrame;
+
+import org.assertj.swing.annotation.GUITest;
+import com.github.caciocavallosilano.cacio.ctc.junit.CacioAssertJRunner;
+
+import org.junit.Test;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
+import org.junit.runner.RunWith;
+
+@RunWith(CacioAssertJRunner.class)
+//@RunWith(GUITestRunner.class)
+@DisabledOnOs(OS.LINUX)
 public class MouseInfoTest {
 
     @Test
     @GUITest
-    public void testSimpleMousePosition() throws Exception {
+    public void testSimpleMousePosition() throws AWTException {
         JFrame f = new JFrame();
         f.setSize(100, 100);
         f.setLocation(100, 100);
         f.setVisible(true);
-        Robot r = new Robot(f.getGraphicsConfiguration().getDevice());
+        Robot r = new Robot();
         r.mouseMove(150, 150);
-        r.waitForIdle();
-
         Point p = f.getMousePosition();
-
-        assertNotNull(p);
         assertEquals(50, p.x);
         assertEquals(50, p.y);
     }

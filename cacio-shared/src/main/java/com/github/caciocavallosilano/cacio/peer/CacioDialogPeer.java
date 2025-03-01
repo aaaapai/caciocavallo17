@@ -29,6 +29,7 @@ import java.awt.Dialog;
 import java.awt.Window;
 import java.awt.peer.DialogPeer;
 import java.awt.peer.WindowPeer;
+import java.awt.GraphicsConfiguration;
 import java.util.List;
 
 import javax.swing.JRootPane;
@@ -74,4 +75,8 @@ class CacioDialogPeer extends CacioWindowPeer implements DialogPeer {
         }
     }
 
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

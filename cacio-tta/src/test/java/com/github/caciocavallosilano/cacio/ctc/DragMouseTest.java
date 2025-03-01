@@ -25,11 +25,12 @@
 
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.ctc.junit.CacioTest;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.AWTException;
+import java.awt.EventQueue;
+import java.awt.Point;
+import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -37,9 +38,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import javax.swing.JFrame;
 
-@CacioTest
+import com.github.caciocavallosilano.cacio.ctc.junit.CacioTestRunner;
+
+import org.assertj.swing.timing.Pause;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(value = CacioTestRunner.class)
 public class DragMouseTest {
 
     @Test
@@ -69,7 +76,14 @@ public class DragMouseTest {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseMove(loc.x + 30, loc.y + 30);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        robot.waitForIdle();
+        EventQueue.invokeAndWait(new Runnable() {
+            
+            @Override
+            public void run() {
+                // Only here for waiting for idle EQ.
+            }
+        });
+        Pause.pause(100);
         assertEquals(MouseEvent.MOUSE_MOVED, evts.get(0).getID());
         assertEquals(20, evts.get(0).getX());
         assertEquals(20, evts.get(0).getY());

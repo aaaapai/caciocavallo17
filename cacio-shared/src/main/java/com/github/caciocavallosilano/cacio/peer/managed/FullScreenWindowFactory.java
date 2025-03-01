@@ -38,14 +38,13 @@ import com.github.caciocavallosilano.cacio.peer.CacioEventSource;
 import com.github.caciocavallosilano.cacio.peer.PlatformToplevelWindow;
 import com.github.caciocavallosilano.cacio.peer.PlatformWindow;
 import com.github.caciocavallosilano.cacio.peer.PlatformWindowFactory;
-import sun.security.action.GetPropertyAction;
+import java.security.PrivilegedAction;
 
 public class FullScreenWindowFactory implements PlatformWindowFactory {
 
     private static final Dimension screenSize;
     static {
-        String size = AccessController.doPrivileged(
-                new GetPropertyAction("cacio.managed.screensize", "1024x768"));
+        String size = AccessController.doPrivileged((PrivilegedAction<String>)() -> System.getProperty("cacio.managed.screensize", "1714x864"));
         int x = size.indexOf('x');
         int width = Integer.parseInt(size.substring(0, x));
         int height = Integer.parseInt(size.substring(x + 1));

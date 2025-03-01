@@ -27,6 +27,7 @@ package com.github.caciocavallosilano.cacio.ctc;
 import java.awt.AWTException;
 import java.awt.Desktop;
 import java.awt.Frame;
+import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 import java.awt.PrintJob;
@@ -34,6 +35,7 @@ import java.awt.Robot;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
 import java.awt.Window;
+import java.awt.datatransfer.Clipboard;
 import java.awt.dnd.DragGestureEvent;
 import java.awt.dnd.InvalidDnDOperationException;
 import java.awt.dnd.peer.DragSourceContextPeer;
@@ -75,6 +77,11 @@ public class CTCToolkit extends CacioToolkit {
             throws AWTException {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public Clipboard getSystemClipboard() {
+        return CTCClipboard.INSTANCE;
     }
 
     @Override
@@ -192,6 +199,29 @@ public class CTCToolkit extends CacioToolkit {
     @Override
     public DataTransferer getDataTransferer() {
         return null;
+    }
+
+    // Cosntant alpha
+    @Override
+    public boolean isWindowOpacitySupported() {
+        return true;
+    }
+
+    // Shaping
+    @Override
+    public boolean isWindowShapingSupported() {
+        return true;
+    }
+
+    // Per-pixel alpha
+    @Override
+    public boolean isWindowTranslucencySupported() {
+        return true;
+    }
+
+    @Override
+    public boolean isTranslucencyCapable(GraphicsConfiguration gc) {
+        return true;
     }
 
     @Override

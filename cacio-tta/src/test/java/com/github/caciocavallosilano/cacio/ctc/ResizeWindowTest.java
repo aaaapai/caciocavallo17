@@ -24,33 +24,46 @@
  */
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.ctc.junit.CacioTest;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
+
 import org.assertj.swing.annotation.GUITest;
 import org.assertj.swing.core.BasicRobot;
 import org.assertj.swing.core.Robot;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.edt.GuiQuery;
 import org.assertj.swing.edt.GuiTask;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import com.github.caciocavallosilano.cacio.ctc.junit.CacioAssertJRunner;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@CacioTest
+@RunWith(value = CacioAssertJRunner.class)
 public class ResizeWindowTest {
 
 	private DraggablePopupMenu popupMenu;
 	protected int action;
 	private Robot robot;
 
-	@BeforeEach
+	@Before
 	public void setUp() {
 		this.popupMenu = GuiActionRunner
 				.execute(new GuiQuery<DraggablePopupMenu>() {
@@ -74,7 +87,7 @@ public class ResizeWindowTest {
 		robot.settings().eventPostingDelay(50);
 	}
 
-	@AfterEach
+	@After
 	public void tearDown() throws Exception {
 		robot.cleanUp();
 	}
@@ -91,7 +104,7 @@ public class ResizeWindowTest {
 		});
 	}
 
-	@Disabled
+	@Ignore
 	@Test
 	@GUITest
 	public void resize() {

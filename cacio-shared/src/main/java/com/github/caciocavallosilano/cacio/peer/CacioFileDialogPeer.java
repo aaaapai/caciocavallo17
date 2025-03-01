@@ -27,6 +27,8 @@ package com.github.caciocavallosilano.cacio.peer;
 
 import java.awt.FileDialog;
 import java.awt.peer.FileDialogPeer;
+import java.awt.GraphicsConfiguration;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import javax.swing.JFileChooser;
@@ -86,4 +88,8 @@ class CacioFileDialogPeer extends CacioDialogPeer
         fileChooser.setFileFilter(new ProxyFilter(filter));
     }
 
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

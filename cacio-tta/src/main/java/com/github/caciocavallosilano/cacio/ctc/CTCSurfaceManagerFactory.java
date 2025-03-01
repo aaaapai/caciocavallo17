@@ -28,7 +28,7 @@ import sun.awt.image.SunVolatileImage;
 import sun.awt.image.VolatileSurfaceManager;
 import sun.java2d.SurfaceManagerFactory;
 
-public class CTCSurfaceManagerFactory extends SurfaceManagerFactory {
+class CTCSurfaceManagerFactory extends SurfaceManagerFactory {
 
     @Override
     public VolatileSurfaceManager createVolatileManager(SunVolatileImage image,

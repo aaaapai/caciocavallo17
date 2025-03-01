@@ -262,6 +262,11 @@ class ProxyWindowPeer implements WindowPeer {
     }
 
     @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+           return gc;
+    }
+
+    @Override
     public GraphicsConfiguration getGraphicsConfiguration() {
         return getTarget().getGraphicsConfiguration();
     }
@@ -318,11 +323,6 @@ class ProxyWindowPeer implements WindowPeer {
 
     @Override
     public void setOpaque(boolean isOpaque) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void repositionSecurityWarning() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
