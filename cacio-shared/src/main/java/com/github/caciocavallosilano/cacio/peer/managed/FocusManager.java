@@ -47,7 +47,7 @@ public class FocusManager {
      * FocusManager in case the property "cacio.focusmgr" has not been set.
      */
     static {
-	String focusMgrClsName = AccessController.doPrivileged(new (PrivilegedAction<String>)() -> System.getProperty("cacio.focusmgr"));
+	String focusMgrClsName = AccessController.doPrivileged((PrivilegedAction<String>)() -> System.getProperty("cacio.focusmgr"));
 	Class cls = FocusManager.class;
 	try {
 	    if (focusMgrClsName != null) {
