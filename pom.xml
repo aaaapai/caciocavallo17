@@ -138,7 +138,7 @@
               --add-exports=java.desktop/sun.awt=ALL-UNNAMED
               --add-exports=java.desktop/sun.awt.event=ALL-UNNAMED
               --add-exports=java.desktop/sun.awt.datatransfer=ALL-UNNAMED
-              --add-exports=java.base/sun.security.action=ALL-UNNAMED
+              --add-exports=java.base/java.security.PrivilegedAction=ALL-UNNAMED
               --add-opens=java.base/java.util=ALL-UNNAMED
               --add-opens=java.desktop/java.awt=ALL-UNNAMED
               --add-opens=java.desktop/sun.java2d=ALL-UNNAMED
