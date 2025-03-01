@@ -263,9 +263,6 @@ class ProxyWindowPeer implements WindowPeer {
 
     @Override
     public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
-        if (getPeer() instanceof WindowPeer) {
-           return ((WindowPeer) getPeer()).getAppropriateGraphicsConfiguration(gc);
-        }
            return gc;
     }
 
