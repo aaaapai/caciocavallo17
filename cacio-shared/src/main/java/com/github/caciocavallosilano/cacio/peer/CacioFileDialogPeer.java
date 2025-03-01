@@ -86,4 +86,9 @@ class CacioFileDialogPeer extends CacioDialogPeer
         fileChooser.setFileFilter(new ProxyFilter(filter));
     }
 
+    @Override
+
+     public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        return gc;
+    }
 }
