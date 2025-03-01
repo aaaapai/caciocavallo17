@@ -75,9 +75,4 @@ class CacioDialogPeer extends CacioWindowPeer implements DialogPeer {
         }
     }
 
-    @Override
-    protected void peerPaint(Graphics g, boolean update) {
-        // Canvas never does any painting by itself, not even clearing the
-        // background.
-    }
 }
