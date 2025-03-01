@@ -44,8 +44,7 @@ public class FullScreenWindowFactory implements PlatformWindowFactory {
 
     private static final Dimension screenSize;
     static {
-        String size = AccessController.doPrivileged(
-                new (PrivilegedAction<String>)() -> System.getProperty("cacio.managed.screensize", "1714x864"));
+        String size = AccessController.doPrivileged((PrivilegedAction<String>)() -> System.getProperty("cacio.managed.screensize", "1714x864"));
         int x = size.indexOf('x');
         int width = Integer.parseInt(size.substring(0, x));
         int height = Integer.parseInt(size.substring(x + 1));
