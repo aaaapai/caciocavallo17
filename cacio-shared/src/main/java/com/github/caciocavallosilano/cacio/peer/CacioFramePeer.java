@@ -113,4 +113,9 @@ class CacioFramePeer extends CacioWindowPeer implements FramePeer {
     public void emulateActivation(boolean activate) {
 
     }
+
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+       return gc;
+    }
 }
