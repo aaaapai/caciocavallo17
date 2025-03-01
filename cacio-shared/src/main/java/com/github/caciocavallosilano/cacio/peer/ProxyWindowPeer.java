@@ -327,11 +327,6 @@ class ProxyWindowPeer implements WindowPeer {
     }
 
     @Override
-    public void repositionSecurityWarning() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public void setZOrder(ComponentPeer above) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
