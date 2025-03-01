@@ -41,6 +41,7 @@ import java.awt.event.WindowEvent;
 import java.awt.geom.Area;
 import java.awt.peer.ComponentPeer;
 import java.awt.peer.WindowPeer;
+import java.awt.GraphicsConfiguration;
 
 import javax.swing.JComponent;
 import javax.swing.JMenuBar;
@@ -377,4 +378,9 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
         return ret;
     }
 
+    @Override
+    protected void peerPaint(Graphics g, boolean update) {
+        // Canvas never does any painting by itself, not even clearing the
+        // background.
+    }
 }
