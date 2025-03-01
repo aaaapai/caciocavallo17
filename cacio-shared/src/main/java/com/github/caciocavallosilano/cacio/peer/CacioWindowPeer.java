@@ -331,11 +331,6 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
     }
 
     @Override
-    public void repositionSecurityWarning() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public void updateWindow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
