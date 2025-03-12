@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.github.caciocavallosilano</groupId>
     <artifactId>cacio</artifactId>
-    <version>1.19-SNAPSHOT</version>
+    <version>1.19.1-SNAPSHOT</version>
   </parent>
   <artifactId>cacio-shared</artifactId>
   <packaging>jar</packaging>
@@ -30,7 +30,7 @@
             <arg>--add-exports=java.desktop/sun.awt.event=ALL-UNNAMED</arg>
             <arg>--add-exports=java.desktop/sun.font=ALL-UNNAMED</arg>
             <arg>--add-exports=java.desktop/sun.java2d.pipe=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.base/java.security.PrivilegedAction=ALL-UNNAMED</arg>
+            <arg>--add-exports=java.base/java.security=ALL-UNNAMED</arg>
             <arg>--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED</arg>
           </compilerArgs>
         </configuration>
