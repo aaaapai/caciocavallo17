@@ -70,6 +70,7 @@
             <additionalOption>--add-exports=java.desktop/java.awt.dnd.peer=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.awt.datatransfer=ALL-UNNAMED</additionalOption>
           </additionalOptions>
+          <compilerArgument>-Xlint</compilerArgument>
         </configuration>
         <executions>
           <execution>
@@ -144,6 +145,7 @@
               --add-opens=java.desktop/sun.java2d=ALL-UNNAMED
               --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
             </argLine>
+            <compilerArgument>-Xlint:unchecked</compilerArgument>
           </configuration>
         </plugin>
       </plugins>
