@@ -29,6 +29,7 @@ import java.awt.Frame;
 import java.awt.MenuBar;
 import java.awt.Rectangle;
 import java.awt.peer.FramePeer;
+import java.awt.GraphicsConfiguration;
 
 import java.awt.peer.MenuBarPeer;
 import javax.swing.JMenuBar;
@@ -112,5 +113,10 @@ class CacioFramePeer extends CacioWindowPeer implements FramePeer {
     @Override
     public void emulateActivation(boolean activate) {
 
+    }
+
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

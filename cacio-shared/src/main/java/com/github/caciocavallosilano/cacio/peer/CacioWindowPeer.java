@@ -41,6 +41,7 @@ import java.awt.event.WindowEvent;
 import java.awt.geom.Area;
 import java.awt.peer.ComponentPeer;
 import java.awt.peer.WindowPeer;
+import java.awt.GraphicsConfiguration;
 
 import javax.swing.JComponent;
 import javax.swing.JMenuBar;
@@ -331,11 +332,6 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
     }
 
     @Override
-    public void repositionSecurityWarning() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public void updateWindow() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -380,5 +376,10 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
             ret = getAWTComponent().isFocusable() && getAWTComponent().getFocusableWindowState();
         }
         return ret;
+    }
+
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

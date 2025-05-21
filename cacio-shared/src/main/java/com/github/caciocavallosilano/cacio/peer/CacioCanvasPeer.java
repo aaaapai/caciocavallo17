@@ -27,9 +27,9 @@ package com.github.caciocavallosilano.cacio.peer;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
-import java.awt.GraphicsConfiguration;
 import java.awt.peer.CanvasPeer;
 import javax.swing.JPanel;
+import java.awt.GraphicsConfiguration;
 
 class CacioCanvasPeer extends CacioComponentPeer<Canvas, JPanel>
                       implements CanvasPeer {

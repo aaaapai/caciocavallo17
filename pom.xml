@@ -1,9 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.1.0-rc-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.1.0-rc-2 https://maven.apache.org/xsd/maven-4.1.0-rc-2.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.caciocavallosilano</groupId>
   <artifactId>cacio</artifactId>
-  <version>1.18-SNAPSHOT</version>
+  <version>1.19.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Caciocavallo Main Module</name>
@@ -55,7 +55,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.11.2</version>
         <configuration>
           <additionalOptions>
             <additionalOption>-XDignore.symbol.file=true</additionalOption>
@@ -64,12 +64,13 @@
             <additionalOption>--add-exports=java.desktop/sun.awt.event=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.font=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.java2d.pipe=ALL-UNNAMED</additionalOption>
-            <additionalOption>--add-exports=java.base/sun.security.action=ALL-UNNAMED</additionalOption>
+            <additionalOption>--add-exports=java.base/java.security=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.java2d=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/java.awt.dnd.peer=ALL-UNNAMED</additionalOption>
             <additionalOption>--add-exports=java.desktop/sun.awt.datatransfer=ALL-UNNAMED</additionalOption>
           </additionalOptions>
+          <compilerArgument>-Xlint</compilerArgument>
         </configuration>
         <executions>
           <execution>
@@ -99,7 +100,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.3</version>
+          <version>1.7.0</version>
           <extensions>true</extensions>
           <configuration>
             <serverId>ossrh</serverId>
@@ -122,7 +123,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.2</version>
+          <version>3.5.2</version>
           <configuration>
             <rerunFailingTestsCount>2</rerunFailingTestsCount>
             <runOrder>random</runOrder>
@@ -138,12 +139,13 @@
               --add-exports=java.desktop/sun.awt=ALL-UNNAMED
               --add-exports=java.desktop/sun.awt.event=ALL-UNNAMED
               --add-exports=java.desktop/sun.awt.datatransfer=ALL-UNNAMED
-              --add-exports=java.base/sun.security.action=ALL-UNNAMED
+              --add-exports=java.base/java.security=ALL-UNNAMED
               --add-opens=java.base/java.util=ALL-UNNAMED
               --add-opens=java.desktop/java.awt=ALL-UNNAMED
               --add-opens=java.desktop/sun.java2d=ALL-UNNAMED
               --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
             </argLine>
+            <compilerArgument>-Xlint:unchecked</compilerArgument>
           </configuration>
         </plugin>
       </plugins>
