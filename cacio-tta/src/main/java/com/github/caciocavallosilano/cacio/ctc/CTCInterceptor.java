@@ -1,4 +1,4 @@
-package com.github.caciocavallosilano.cacio.ctc.junit;
+package com.github.caciocavallosilano.cacio.ctc;
 
 import com.github.caciocavallosilano.cacio.ctc.CTCGraphicsEnvironment;
 import net.bytebuddy.implementation.bind.annotation.*;
