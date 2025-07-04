@@ -31,8 +31,14 @@ import sun.java2d.SurfaceManagerFactory;
 
 public class CTCGraphicsEnvironment extends SunGraphicsEnvironment {
 
+    private static final CTCGraphicsEnvironment INSTANCE = new CTCGraphicsEnvironment();
+
     public CTCGraphicsEnvironment() {
         SurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory());
+    }
+
+    public static CTCGraphicsEnvironment getInstance() {
+        return INSTANCE;
     }
 
     @Override
