@@ -175,6 +175,12 @@ public class CTCPreloadClassLoader extends URLClassLoader implements ExecutionCo
                 PlatformWindowFactory.class,
                 FullScreenWindowFactory.class,
                 CTCGraphicsDevice.class,
+                FontManagerUtil.class,
+                CTCStringTransferable.class,
+                CTCFontManager.class,
+                CTCDesktopPeer.class,
+                CTCClipboard.class,
+                CTCAndroidInput.class,
                 CTCVolatileSurfaceManager.class);
 
         ByteBuddy byteBuddy = new ByteBuddy();
