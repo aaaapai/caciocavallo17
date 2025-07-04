@@ -29,6 +29,7 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
 import com.github.caciocavallosilano.cacio.ctc.*;
 import com.github.caciocavallosilano.cacio.peer.PlatformWindowFactory;
 import com.github.caciocavallosilano.cacio.peer.managed.FullScreenWindowFactory;
+import com.github.caciocavallosilano.cacio.ctc.junit;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.dynamic.ClassFileLocator;
