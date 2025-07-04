@@ -150,14 +150,14 @@ public class CTCToolkit extends CacioToolkit {
     @Override
     public boolean isDesktopSupported() {
         // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
     @Override
     public DesktopPeer createDesktopPeer(Desktop target)
             throws HeadlessException {
         // TODO Auto-generated method stub
-        return null;
+        return new CTCDesktopPeer();
     }
 
     @Override
@@ -226,6 +226,6 @@ public class CTCToolkit extends CacioToolkit {
 
     @Override
     public boolean isTaskbarSupported() {
-        return true;
+        return false;
     }
 }
