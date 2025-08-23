@@ -45,6 +45,11 @@
       <artifactId>jide-oss</artifactId>
       <version>3.6.18</version>
     </dependency>
+    <dependency>
+        <groupId>com.github.caciocavallosilano</groupId>
+        <artifactId>cacio-tta</artifactId>
+        <version>1.19.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>
