@@ -11,6 +11,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import sun.misc.Unsafe;
 
+import com.github.caciocavallosilano.cacio.ctc.*;
+
 public class CTCJavaAgent {
     
     public static void premain(String args, Instrumentation inst) {
