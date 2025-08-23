@@ -10,7 +10,7 @@ import java.security.PrivilegedAction;
 
 import sun.font.*;
 
-class FontManagerUtil {
+public class FontManagerUtil {
 
     // A way to force set a FontManager
     static void setFontManager(final String fmClassName) {
