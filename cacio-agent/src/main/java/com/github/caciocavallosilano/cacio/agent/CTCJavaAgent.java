@@ -1,6 +1,6 @@
 package com.github.caciocavallosilano.cacio.agent;
 
-import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class CTCJavaAgent {
             initializeCTCEnvironment();
             
             // 设置系统属性以使用Metal外观
-            System.setProperty("swing.defaultlaf", MetalLookAndFeel.class.getName());
+            System.setProperty("swing.defaultlaf", NimbusLookAndFeel.class.getName());
             
         } catch (Exception e) {
             e.printStackTrace();
