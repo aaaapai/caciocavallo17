@@ -59,7 +59,7 @@ public class CTCToolkit extends CacioToolkit {
 
     public CTCToolkit() {
         setDecorateWindows(true);
-        System.setProperty("swing.defaultlaf", "javax.swing.plaf.metal.MetalLookAndFeel");
+        System.setProperty("swing.defaultlaf", "javax.swing.plaf.nimbus.NimbusLookAndFeel");
     }
 
     @Override
