@@ -21,7 +21,7 @@ public class CTCJavaAgent {
             // 执行原始静态初始化块中的代码
             initializeCTCEnvironment();
             
-            // 设置系统属性以使用Metal外观
+            // 设置系统属性以使用Nimbus外观
             System.setProperty("swing.defaultlaf", NimbusLookAndFeel.class.getName());
             
         } catch (Exception e) {
