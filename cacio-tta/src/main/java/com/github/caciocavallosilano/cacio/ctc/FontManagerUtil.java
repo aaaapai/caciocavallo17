@@ -13,7 +13,7 @@ import sun.font.*;
 public class FontManagerUtil {
 
     // A way to force set a FontManager
-    static void setFontManager(final String fmClassName) {
+    public static void setFontManager(final String fmClassName) {
         AccessController.doPrivileged(new PrivilegedAction<Object>() {
 
                 public Object run() {
@@ -40,7 +40,7 @@ public class FontManagerUtil {
             });
     }
 
-    static void setFontScaler(final String fsClassName) {
+    public static void setFontScaler(final String fsClassName) {
         AccessController.doPrivileged(new PrivilegedAction<Object>() {
 
                 public Object run() {
