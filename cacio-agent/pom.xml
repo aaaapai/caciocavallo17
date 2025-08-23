@@ -48,7 +48,7 @@
     <dependency>
         <groupId>com.github.caciocavallosilano</groupId>
         <artifactId>cacio-tta</artifactId>
-        <version>1.19.1-SNAPSHOT</version>
+        <version>1.19.2-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
