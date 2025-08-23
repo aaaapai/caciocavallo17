@@ -115,8 +115,4 @@ class CacioFramePeer extends CacioWindowPeer implements FramePeer {
 
     }
 
-    @Override
-    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }
