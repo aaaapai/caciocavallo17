@@ -379,7 +379,8 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
     }
 
     @Override
-    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+    public void repositionSecurityWarning() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
 }
