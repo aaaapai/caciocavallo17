@@ -12,6 +12,7 @@ import java.net.URL;
 import sun.misc.Unsafe;
 
 import com.github.caciocavallosilano.cacio.ctc.*;
+import com.github.caciocavallosilano.cacio.ctc.FontManagerUtil;
 
 public class CTCJavaAgent {
     
