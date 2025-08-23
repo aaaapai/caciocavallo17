@@ -1,4 +1,4 @@
-package com.github.caciocavallosilano.cacio.ctc;
+package com.github.caciocavallosilano.cacio.agent;
 
 import javax.swing.plaf.metal.MetalLookAndFeel;
 import java.awt.*;
