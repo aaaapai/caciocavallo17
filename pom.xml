@@ -36,9 +36,9 @@
   </developers>
 
   <modules>
-    <module>cacio-agent</module>
     <module>cacio-shared</module>
     <module>cacio-tta</module>
+    <module>cacio-agent</module>
   </modules>
 
   <distributionManagement>
