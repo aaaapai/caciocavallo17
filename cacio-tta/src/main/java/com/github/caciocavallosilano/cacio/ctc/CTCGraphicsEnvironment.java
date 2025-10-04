@@ -32,7 +32,12 @@ import sun.java2d.SurfaceManagerFactory;
 public class CTCGraphicsEnvironment extends SunGraphicsEnvironment {
 
     public CTCGraphicsEnvironment() {
-        SurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory());
+          try {
+             SurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory());
+          } catch (Exception | NoClassDefFoundError e) {
+                // 同时捕获Exception和NoClassDefFoundError
+                CacioSurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory());
+          }
     }
 
     @Override
