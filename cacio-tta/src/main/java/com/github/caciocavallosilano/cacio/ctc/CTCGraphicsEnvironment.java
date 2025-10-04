@@ -28,7 +28,6 @@ import java.awt.GraphicsDevice;
 
 import sun.java2d.SunGraphicsEnvironment;
 import sun.java2d.SurfaceManagerFactory;
-import com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory;
 
 public class CTCGraphicsEnvironment extends SunGraphicsEnvironment {
 
