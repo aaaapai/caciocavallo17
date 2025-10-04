@@ -23,7 +23,7 @@
  * questions.
  */
 
-package ctc.cacio;
+package com.github.caciocavallosilano.cacio.ctc;
 
 import sun.awt.image.SunVolatileImage;
 import sun.awt.image.VolatileSurfaceManager;
