@@ -49,7 +49,11 @@ public class CTCJavaAgent {
         defaultHeadlessField.set(null, Boolean.FALSE);
         headlessField.set(null, Boolean.FALSE);
 
-        Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+        try {
+            Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+        } catch (Exception | NoClassDefFoundError e) {
+            Class<?> smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory");
+        }
         Field smf = smfCls.getDeclaredField("instance");
         smf.setAccessible(true);
         smf.set(null, null);
