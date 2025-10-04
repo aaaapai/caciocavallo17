@@ -58,7 +58,6 @@ public class CTCToolkit extends CacioToolkit {
     private PlatformWindowFactory platformWindowFactory;
 
     public CTCToolkit() {
-        setDecorateWindows(true);
         System.setProperty("swing.defaultlaf", "javax.swing.plaf.nimbus.NimbusLookAndFeel");
     }
 
