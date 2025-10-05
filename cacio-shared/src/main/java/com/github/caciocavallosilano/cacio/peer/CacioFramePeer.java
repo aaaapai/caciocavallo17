@@ -115,4 +115,13 @@ class CacioFramePeer extends CacioWindowPeer implements FramePeer {
 
     }
 
+    @Override
+    public boolean requestFocus(Component lightweightChild, boolean temporary,
+                           boolean focusedWindowChangeAllowed, long time,
+                           sun.awt.CausedFocusEvent.Cause cause) {
+    
+         return getTarget().requestFocus(lightweightChild, temporary,
+                                   focusedWindowChangeAllowed, time, cause);
+    }
+
 }
