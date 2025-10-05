@@ -43,7 +43,12 @@ public class CTCJavaAgent {
         headlessField.setAccessible(true);
         headlessField.set(null, Boolean.TRUE);
 
-        Class<?> geCls = Class.forName("java.awt.GraphicsEnvironment$LocalGE");
+        Class<?> geCls = null;
+        try {
+            Class<?> geCls = Class.forName("java.awt.GraphicsEnvironment$LocalGE");
+        } catch (Exception | NoClassDefFoundError e) {
+            Class<?> geCls = Class.forName("java.awt.GraphicsEnvironment");
+        }
         Field ge = geCls.getDeclaredField("INSTANCE");
         ge.setAccessible(true);
         defaultHeadlessField.set(null, Boolean.FALSE);
