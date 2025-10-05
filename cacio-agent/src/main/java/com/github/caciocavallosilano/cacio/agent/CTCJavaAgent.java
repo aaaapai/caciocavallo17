@@ -45,9 +45,9 @@ public class CTCJavaAgent {
 
         Class<?> geCls = null;
         try {
-            Class<?> geCls = Class.forName("java.awt.GraphicsEnvironment$LocalGE");
+            geCls = Class.forName("java.awt.GraphicsEnvironment$LocalGE");
         } catch (Exception | NoClassDefFoundError e) {
-            Class<?> geCls = Class.forName("java.awt.GraphicsEnvironment");
+            geCls = Class.forName("java.awt.GraphicsEnvironment");
         }
         Field ge = geCls.getDeclaredField("INSTANCE");
         ge.setAccessible(true);
