@@ -4,7 +4,7 @@
  */
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.peer.managed.EventData;
+import com.github.caciocavallosilano.cacio.peer.managed.ExternalMouseReader;
 
 
 /**
@@ -13,7 +13,7 @@ import com.github.caciocavallosilano.cacio.peer.managed.EventData;
  */
 public class InfdevGrabHandler{
     private static boolean eventSelfSubmitted;
-    private static EventData externalMouseReader;
+    private static ExternalMouseReader externalMouseReader;
     private static boolean isGrabbing;
     
     private static int lx, ly;
@@ -32,7 +32,7 @@ public class InfdevGrabHandler{
         }
         return true;
     }
-    public static void setMouseReader(EventData reader) {
+    public static void setMouseReader(ExternalMouseReader reader) {
         externalMouseReader = reader;
     }
     public static void setGrabbed(boolean grabbed) {
