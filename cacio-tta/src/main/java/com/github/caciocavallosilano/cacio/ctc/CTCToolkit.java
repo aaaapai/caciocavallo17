@@ -25,11 +25,14 @@
 package com.github.caciocavallosilano.cacio.ctc;
 
 import java.awt.AWTException;
+import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Frame;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.PrintJob;
 import java.awt.Robot;
 import java.awt.SystemTray;
@@ -117,7 +120,7 @@ public class CTCToolkit extends CacioToolkit {
 
     @Override
     public RobotPeer createRobot(GraphicsDevice screen) throws AWTException {
-        return new CTCRobotPeer();
+        return new CTCRobotPeer(Boolean.parseBoolean(System.getProperty("com.github.caciocavallosilano.cacio.ctc.CTCToolkit.enableInfdevMouseHandler","true")));
     }
 
     protected int getScreenWidth() {
@@ -226,5 +229,11 @@ public class CTCToolkit extends CacioToolkit {
     @Override
     public boolean isTaskbarSupported() {
         return false;
+    }
+
+    @Override
+     public Cursor createCustomCursor(Image cursor, Point hotSpot, String name) {
+         System.out.println("cursor="+cursor+" hotspot="+hotSpot.toString()+" name="+name);
+         return new Cursor(Cursor.DEFAULT_CURSOR);
     }
 }
