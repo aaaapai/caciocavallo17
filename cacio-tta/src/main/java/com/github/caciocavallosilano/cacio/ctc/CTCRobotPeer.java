@@ -54,8 +54,13 @@ public class CTCRobotPeer implements RobotPeer {
     
     private int currentX = 0;
     private int currentY = 0;
+    private boolean enableInfdevHandler = false;
 
     private MouseClickSupport mouseClickSupport = new MouseClickSupport();
+
+    public CTCRobotPeer(boolean enableInfdevHandler) {
+        this.enableInfdevHandler = enableInfdevHandler;
+    }
 
     private EventData mouseEvent(int id, int currentButton, boolean popup) {
         EventData ev = new EventData();
@@ -73,6 +78,7 @@ public class CTCRobotPeer implements RobotPeer {
 
     @Override
     public void mouseMove(int x, int y) {
+        if(this.enableInfdevHandler && InfdevGrabHandler.robotMouseEvent(this, x, y)) return;
         currentX = x;
         currentY = y;
         int id = isButtonPressed() ? MouseEvent.MOUSE_MOVED : MouseEvent.MOUSE_DRAGGED;
