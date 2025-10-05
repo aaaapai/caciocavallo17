@@ -4,7 +4,7 @@
  */
 package com.github.caciocavallosilano.cacio.ctc;
 
-import com.github.caciocavallosilano.cacio.peer.managed.ExternalMouseReader;
+import com.github.caciocavallosilano.cacio.ctc.ExternalMouseReader;
 
 
 /**
