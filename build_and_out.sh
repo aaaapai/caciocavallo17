@@ -15,6 +15,6 @@ fi
 
 for jarfile in out/cacio-*.jar; do
         echo "Downgrading: $(basename $jarfile)"
-        java -jar JavaDowngrader-Standalone-1.1.2.jar --target 8 "$jarfile" "$jarfile.tmp"
+        java -jar JavaDowngrader-Standalone-1.1.2.jar -v 8 -i "$jarfile" -o "$jarfile.tmp"
         mv "$jarfile.tmp" "$jarfile"
 done
