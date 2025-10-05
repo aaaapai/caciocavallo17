@@ -49,8 +49,15 @@ public class CTCJavaAgent {
         } catch (Exception | NoClassDefFoundError e) {
             geCls = Class.forName("java.awt.GraphicsEnvironment");
         }
-        Field ge = geCls.getDeclaredField("INSTANCE");
-        ge.setAccessible(true);
+        Field localEnvField = null;
+        try {
+           Field ge = geCls.getDeclaredField("INSTANCE");
+           ge.setAccessible(true);
+        } catch (Exception | NoClassDefFoundError e) {
+            localEnvField = geCls.getDeclaredField("localEnv");
+            localEnvField.setAccessible(true);
+            localEnvField.set(null, new CTCGraphicsEnvironment());
+        }
         defaultHeadlessField.set(null, Boolean.FALSE);
         headlessField.set(null, Boolean.FALSE);
 
