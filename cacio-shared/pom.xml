@@ -25,13 +25,6 @@
           <target>8</target>
           <compilerArgs>
             <arg>-XDignore.symbol.file=true</arg>
-            <arg>--add-exports=java.desktop/java.awt.peer=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.desktop/sun.awt=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.desktop/sun.awt.event=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.desktop/sun.font=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.desktop/sun.java2d.pipe=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.base/java.security.PrivilegedAction=ALL-UNNAMED</arg>
-            <arg>--add-exports=java.desktop/sun.awt.image=ALL-UNNAMED</arg>
           </compilerArgs>
         </configuration>
       </plugin>
