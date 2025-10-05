@@ -119,9 +119,12 @@ class CacioFramePeer extends CacioWindowPeer implements FramePeer {
     public boolean requestFocus(Component lightweightChild, boolean temporary,
                            boolean focusedWindowChangeAllowed, long time,
                            sun.awt.CausedFocusEvent.Cause cause) {
+       // 这里可以添加焦点请求的逻辑
+       // 例如，通知窗口管理器这个窗口应该获得焦点
+       getToplevelWindow().requestFocus();
     
-         return getTarget().requestFocus(lightweightChild, temporary,
-                                   focusedWindowChangeAllowed, time, cause);
+       // 返回 true 表示焦点请求成功
+       return true;
     }
 
 }
