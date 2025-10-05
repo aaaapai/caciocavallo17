@@ -58,6 +58,9 @@ public class CTCRobotPeer implements RobotPeer {
 
     private MouseClickSupport mouseClickSupport = new MouseClickSupport();
 
+    public CTCRobotPeer() {
+    }
+
     public CTCRobotPeer(boolean enableInfdevHandler) {
         this.enableInfdevHandler = enableInfdevHandler;
     }
