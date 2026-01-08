@@ -62,7 +62,7 @@ public class CTCJavaAgent {
 
         Class<?> smfCls = null;
         try {
-           smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+           smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory"); //sun.java2d.SurfaceManagerFactory
         } catch (Exception | NoClassDefFoundError e) {
            smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory");
         }
