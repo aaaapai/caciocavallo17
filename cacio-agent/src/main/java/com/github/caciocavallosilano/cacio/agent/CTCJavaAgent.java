@@ -62,7 +62,8 @@ public class CTCJavaAgent {
 
         Class<?> smfCls = null;
         try {
-           smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+           //smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+           smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory");
         } catch (Exception | NoClassDefFoundError e) {
            smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory");
         }
@@ -71,7 +72,15 @@ public class CTCJavaAgent {
         smf.setAccessible(true);
         smf.set(null, null);
 
-        setFinalStatic(ge, new CTCGraphicsEnvironment());
+        try {
+          setFinalStatic(ge, new CTCGraphicsEnvironment());
+        } catch (Exception | NoClassDefFoundError e) {
+          smfCls = Class.forName("com.github.caciocavallosilano.cacio.ctc.CacioSurfaceManagerFactory");
+          Field smf = smfCls.getDeclaredField("instance");
+          smf.setAccessible(true);
+          smf.set(null, null);
+        }
+
 
         String propertyFontManager = System.getProperty("cacio.font.fontmanager");
         if (propertyFontManager != null) {
