@@ -34,7 +34,7 @@ public class CTCGraphicsEnvironment extends SunGraphicsEnvironment {
 
     public CTCGraphicsEnvironment() {
           try {
-             SurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory_high());
+                CacioSurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory_high());
           } catch (Exception | NoClassDefFoundError e) {
                 // 同时捕获Exception和NoClassDefFoundError
                 CacioSurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory_high());
